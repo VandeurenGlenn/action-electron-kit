@@ -1,4 +1,4 @@
-const { execSync } = require('fs');
+const { execSync } = require('child_process');
 
 const run = (cmd, cwd) => execSync(cmd, { encoding: "utf8", stdio: "inherit", cwd });
 
