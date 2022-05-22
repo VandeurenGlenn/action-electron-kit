@@ -1,5 +1,7 @@
-const { execSync, readdirSync } = require('child_process');
-const artifact = require('@actions/artifact');
+import { execSync, readdirSync } from 'child_process'
+import * as core from './../node_modules/@actions/core/lib/core'
+import * as artifact from './../node_modules/@actions/artifact/lib/artifact-client'
+
 const run = (cmd, cwd) => execSync(cmd, { encoding: "utf8", stdio: "inherit", cwd });
 
 
@@ -12,8 +14,8 @@ const runAction = async () => {
 
   if (release) {
     run('rm -rf build/unpacked')
-    
-    const artifactClient = create()
+
+    const artifactClient = artifact.create()
     const options = {
       continueOnError: false
     }
