@@ -1,0 +1,20 @@
+name: Electron Kit Action
+author: Vandeuren Glenn
+description: GitHub Action for building and releasing Electron apps using electron-kit
+
+inputs:
+  github_token:
+    description: GitHub authentication token
+    required: true
+  release:
+    description: Whether the app should be released after a successful build
+    required: false
+    default: false
+
+runs:
+  using: node16
+  main: index.js
+
+branding:
+  icon: book
+  color: purple
